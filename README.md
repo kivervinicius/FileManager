@@ -1,73 +1,74 @@
 # FileManager
 
-FileManager是一个基于PHP Laravel的Web文件管理器，支持基础文件操作。
+FileManager é um baseado na Web PHP Laravel o gerenciador de arquivos que suporta operações de arquivo básicas.
 ![image](https://s3-us-west-2.amazonaws.com/assets.cdn.univerch.com/filemanager.png)
 
-## 服务器要求
+## Requisitos do Servidor
 
  * PHP >= 5.4
  * composer
  * npm
 
-## 基础功能
+## Funções básicas
 
- * 基础用户验证
- * 自定义文件系统物理路径
- * 文件（夹）创建、上传、下载、重命名、删除
- * AJAX支持
+ * Autenticação Básica de Usuários
+ * Sistema de arquivos personalizado caminho físico
+ * Arquivo ( pasta) para criar , fazer upload, download, renomear, apagar ,
+ * Suporte a AJAX
 
-## 在线演示
+## Live Demo
 
- * 测试地址：http://filemanager.michaelzlies.com
- * 测试用户：test@test.local
- * 密码：123456
+ * Endereço teste: http: //filemanager.michaelzlies.com
+ * Teste do Usuário : test@test.local
+ * Senha: 123456
 
-## 安装
+## Instalação
 
- 1. 克隆Git仓库
+ 1. clonagem repositório Git
+
 
      ```
      git clone https://github.com/lzhang43/FileManager.git
      ```
 
- 2. 安装依赖库
+ 2. As bibliotecas dependentes
 
      ```
      composer install
      npm install
      ```
 
- 3. 编译CSS、JS文件
+ 3. Compilar CSS, JS arquivos
 
     ```
     gulp
     ```
 
-## 配置
+## configuração
 
-  1. 在程序根目录下，复制环境变量配置文件
+  1. No diretório raiz , copie o arquivo de configuração variável de ambiente
 
      ```
      cp .env.example .env
      ```
 
-  2. 修改环境变量
+  2. Modificar variáveis ​​de ambiente
 
+ ```
+     Disk_name = default // local " disco " nome para o local,
+     DISK_DRIVER = defaults // locais para o sistema de arquivos local , mas também através Laravel suporta Amazon S3 e RackSpace
+     DISK_ROOT = / var / disk // customizável "Disk " (Root) , o diretório de armazenamento padrão / app ao usar o diretório de programas como o diretório raiz
+
+     DB_HOST = localhost // endereço banco de dados
+     DB_DATABASE = herdade // nome do banco de dados
+     DB_USERNAME = hoemstead // nome de usuário de banco de dados
+     DB_PASSWORD = secret // senha de banco de dados
      ```
-     DISK_NAME=local     // 默认“磁盘”名称为local
-     DISK_DRIVER=local   // 默认使用本地文件系统，也通过Laravel支持 Amazon S3 和 RackSpace
-     DISK_ROOT=/var/disk // 可自定义“磁盘”根目录，默认情况下使用程序目录下 storage/app 目录作为根目录
 
-     DB_HOST=localhost      // 数据库地址
-     DB_DATABASE=homestead  // 数据库名称
-     DB_USERNAME=hoemstead  // 数据库用户名
-     DB_PASSWORD=secret     // 数据库密码
-     ```
-
-  3. 安装数据库
+  3. Instale banco de dados
 
      ```
      php artisan migrate
      ```
 
-  4. 安装完毕后即可通过Web浏览器访问使用
+  4. Você pode ser acessado usando um navegador da Web após a instalação
